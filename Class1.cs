@@ -39,16 +39,11 @@ namespace GasStationSystem
 
             if (station == null) return;
 
-            if (_playersInZones.ContainsKey(player.CSteamID))
-            {
-                ChatManager.serverSendMessage(Class1.Instance.Translate("gas_station_welcome"), Color.white, null, player.SteamPlayer(), EChatMode.SAY, null, true);
-            }
             _playersInZones[player.CSteamID] = station;
         }
 
         public override TranslationList DefaultTranslations => new TranslationList
         {
-                {"gas_station_welcome","Welcome to gas station! Type /gas to fill the tank"},
                 {"gas_station_usage","Use: /gaszone add/remove"},
                 {"gas_station_added","Gas Station zone added with Id: {0}"},
                 {"gas_station_removed","Gas Station zone removed"},
