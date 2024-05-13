@@ -27,9 +27,7 @@ namespace GasStationSystem
         {
             get
             {
-                return new List<string>() {
-                    "Tankuj.usage"
-                };
+                return new List<string>() {};
             }
         }
         public bool RunFromConsole
@@ -39,22 +37,22 @@ namespace GasStationSystem
 
         public string Name
         {
-            get { return "tankuj"; }
+            get { return "gas"; }
         }
         public string Syntax
         {
             get
             {
-                return "/tankuj";
+                return "/gas";
             }
         }
         public string Help
         {
-            get { return "Będąc w odpowiedniej strefie wpisz /tankuj aby zatankować auto"; }
+            get { return "Będąc w odpowiedniej strefie wpisz /gas aby zatankować auto"; }
         }
         public List<string> Aliases
         {
-            get { return new List<string> { "tankujzone" }; }
+            get { return new List<string>(); }
         }
 
         public void Execute(IRocketPlayer caller, params string[] command)

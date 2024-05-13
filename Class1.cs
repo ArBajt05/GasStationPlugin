@@ -19,12 +19,12 @@ namespace GasStationSystem
     public class Class1 : RocketPlugin<Configuration>
     {
         public static Class1 Instance;
-        private Dictionary<CSteamID, Zone> _playersInZones;
+        private Dictionary<CSteamID, Zone> PlayerInGasStationZone;
 
         protected override void Load()
         {
             Instance = this;
-            _playersInZones = new Dictionary<CSteamID, Zone>();
+            PlayerInGasStationZone = new Dictionary<CSteamID, Zone>();
             UnturnedPlayerEvents.OnPlayerUpdatePosition += UnturnedPlayerEvents_OnPlayerUpdatePosition;
         }
 
@@ -39,7 +39,7 @@ namespace GasStationSystem
 
             if (station == null) return;
 
-            _playersInZones[player.CSteamID] = station;
+            PlayerInGasStationZone[player.CSteamID] = station;
         }
 
         public override TranslationList DefaultTranslations => new TranslationList
@@ -47,7 +47,6 @@ namespace GasStationSystem
                 {"gas_station_usage","Use: /gaszone add/remove"},
                 {"gas_station_added","Gas Station zone added with Id: {0}"},
                 {"gas_station_removed","Gas Station zone removed"},
-                {"gas_station_id","Id: {0}"},
                 {"gas_station_wrong_id","Wrong id of the zone"},
                 {"gas_station_not_exist","There are no gas stations"},
                 {"gas_station_not_in","You are not at gas station"},
