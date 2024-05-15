@@ -26,7 +26,10 @@ namespace GasStationSystem
         {
             get
             {
-                return new List<string>() {};
+                return new List<string>()
+                {
+                    "gaszone.create"
+                };
             }
         }
         public bool RunFromConsole
@@ -51,7 +54,7 @@ namespace GasStationSystem
         }
         public List<string> Aliases
         {
-            get { return new List<string> { "gaszone" }; }
+            get { return new List<string>() { "gaszone" }; }
         }
 
         //gaszone add 

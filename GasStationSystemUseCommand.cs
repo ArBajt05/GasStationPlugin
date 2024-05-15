@@ -27,7 +27,10 @@ namespace GasStationSystem
         {
             get
             {
-                return new List<string>() {};
+                return new List<string>()
+                {
+                    "gas.car"
+                };
             }
         }
         public bool RunFromConsole
@@ -48,11 +51,11 @@ namespace GasStationSystem
         }
         public string Help
         {
-            get { return "Będąc w odpowiedniej strefie wpisz /gas aby zatankować auto"; }
+            get { return "/gas to fill up the tank"; }
         }
         public List<string> Aliases
         {
-            get { return new List<string>(); }
+            get { return new List<string>() { "gas" }; }
         }
 
         public void Execute(IRocketPlayer caller, params string[] command)
